@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
+    "firebase": "^9.19.1",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -15,10 +17,11 @@
     "react-slick": "^0.29.0",
     "reactstrap": "^9.1.8",
     "slick-carousel": "^1.8.1",
-<<<<<<< HEAD
-=======
     "sweetalert": "^2.1.2",
->>>>>>> 8a1299feae8114a5ab39e53d912473e1283796e1
+    "remixicon": "^3.0.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.9",
+    "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

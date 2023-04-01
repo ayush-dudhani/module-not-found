@@ -1,15 +1,27 @@
+<<<<<<< HEAD
 .car__item {
+=======
+.item {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
   border: 1px solid #7c8a9736;
   padding: 20px;
   border-radius: 5px;
 }
 
+<<<<<<< HEAD
 .car__item-info span i {
+=======
+.item-info span i {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
   color: #f9a826;
   font-size: 1.1rem;
 }
 
+<<<<<<< HEAD
 .car__item-btn {
+=======
+.item-btn {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
   border-radius: 0;
   border: none;
   outline: none;
@@ -17,20 +29,32 @@
   padding: 8px 0px;
 }
 
+<<<<<<< HEAD
 .car__item-btn a {
+=======
+.item-btn a {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
   text-decoration: none;
   color: #fff;
   font-weight: 500;
 }
 
+<<<<<<< HEAD
 .car__item-btn a:hover {
   color: #fff;
 }
 .car__btn-details {
+=======
+.item-btn a:hover {
+  color: #fff;
+}
+.btn-details {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
   background: #f9a826;
   border-radius: 0px 4px 4px 0px;
 }
 
+<<<<<<< HEAD
 .car__btn-rent {
   border-radius: 4px 0px 0px 4px;
 }
@@ -40,37 +64,69 @@
 }
 
 .car__item-content h6 {
+=======
+.btn-rent {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.item-content h4 {
+  font-size: 1.8rem;
+}
+
+.item-content h6 {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
   font-size: 1.2rem;
   font-weight: 600;
 }
 
 @media only screen and (max-width: 992px) {
+<<<<<<< HEAD
   .car__item h4 {
+=======
+  .item h4 {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
     font-size: 1.1rem;
     margin-bottom: 0;
   }
 
+<<<<<<< HEAD
   .car__item h6 {
+=======
+  .item h6 {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
     font-size: 1rem;
     margin-top: 10px;
   }
 
+<<<<<<< HEAD
   .car__item-info {
     flex-wrap: wrap;
   }
 
   .car__item-info span {
+=======
+  .item-info {
+    flex-wrap: wrap;
+  }
+
+  .item-info span {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
     font-size: 0.8rem;
     justify-content: space-between;
   }
 
+<<<<<<< HEAD
   .car__item-btn {
+=======
+  .item-btn {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
     padding: 5px 10px;
     font-size: 0.9rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
+<<<<<<< HEAD
   .car__item h4 {
     font-size: 1rem;
   }
@@ -88,6 +144,25 @@
   }
 
   .car__item-btn {
+=======
+  .item h4 {
+    font-size: 1rem;
+  }
+
+  .item h6 {
+    font-size: 0.9rem;
+  }
+
+  .item-info span {
+    font-size: 0.7rem;
+  }
+
+  .item-info span i {
+    font-size: 0.9rem;
+  }
+
+  .item-btn {
+>>>>>>> d2cef5edd24612da33f6d2084a129d74a0c96792
     font-size: 0.8rem;
   }
 }
