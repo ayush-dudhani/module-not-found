@@ -6,9 +6,7 @@ const Layout = () => {
   return (
     <Fragment>
       <Header />
-
       <Routers />
-
       <Footer />
     </Fragment>
   )
