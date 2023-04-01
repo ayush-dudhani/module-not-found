@@ -9,7 +9,7 @@ import EquipmentListing from "../pages/EquipmentListing"
 import getData from '../hooks/fetchData';
 import EquipmentsDetails from "../pages/EquipmentDetails"
 const Routers = () => {
-  const {data}=getData();
+  const { data } = getData()
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -19,7 +19,10 @@ const Routers = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/equipments" element={<EquipmentListing />} />
-      <Route path="/equipments/:idd" element={<EquipmentsDetails data={data} />} />
+      <Route
+        path="/equipments/:idd"
+        element={<EquipmentsDetails data={data} />}
+      />
     </Routes>
   )
 }

@@ -4,7 +4,7 @@ import InputForm from "./formInput"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../config/Firebase"
 import { useNavigate } from "react-router"
-// import { AuthContext } from "../context/AuthContext"
+import { AuthContext } from "../context/AuthContext"
 import swal from "sweetalert"
 
 const Container = styled.div`
@@ -74,7 +74,7 @@ const inputs = [
 const SignIn = () => {
   const Navigate = useNavigate()
 
-  // const { dispatch } = useContext(AuthContext)
+  const { dispatch } = useContext(AuthContext)
 
   const [values, setValues] = useState({
     email: "",
@@ -91,7 +91,7 @@ const SignIn = () => {
       .then((userCredential) => {
         const user = userCredential.user
 
-        // dispatch({ type: "LOGIN", payload: user })
+        dispatch({ type: "LOGIN", payload: user })
 
         swal({
           title: "Logged In!",
