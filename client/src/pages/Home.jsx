@@ -8,7 +8,8 @@ const Home = () => {
   return (
     <Helmet title="Home">
       {" "}
-      <HeroSlider /> <AboutSection />
+      <HeroSlider />
+      <AboutSection />
       <section>
         <Container>
           <Row>

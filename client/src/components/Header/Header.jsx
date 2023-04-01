@@ -4,7 +4,6 @@ import { Container, Row, Col } from "reactstrap";
 import { Link, NavLink,Navigate } from "react-router-dom";
 import "../../styles/header.css";
 import swal from "sweetalert";
-// import { AuthContext } from "../../context/AuthContext";
 
 
 const navLinks = [
@@ -48,27 +47,11 @@ const logoStyleh1={
 
 const Header = () => {
 
-  //  const {dispatch} =useContext(AuthContext);
 
   const handleLogout=()=>{
-    //  dispatch({type:'LOGOUT'})
-     
-    //            swal({
-    //                   title: "Logged Out!",
-    //                  text: "You Logged Out Sucessfullyy!",
-    //                  icon: "success",
-    //                  button: "Close!",
-    //                   });
-             
-
-    //  Navigate('/');
     console.log("logged out");
   }
 
-
-  // const {currentUser}=useContext(AuthContext);
- 
-  // console.log(currentUser);
 
   const menuRef = useRef(null);
 
