@@ -1,6 +1,6 @@
 import Layout from "./components/Layout/Layout"
 
-const App = () => {
+function App() {
   return <Layout />
 }
 
