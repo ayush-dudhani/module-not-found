@@ -9,6 +9,7 @@ import ServicesList from "../components/UI/ServicesList"
 const Home = () => {
   return (
     <Helmet title="Home">
+      {" "}
       <HeroSlider />
       <AboutSection />
       <section>

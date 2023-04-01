@@ -4,7 +4,6 @@ import { Container, Row, Col } from "reactstrap"
 import { Link, NavLink, Navigate } from "react-router-dom"
 import "../../styles/header.css"
 import swal from "sweetalert"
-// import { AuthContext } from "../../context/AuthContext";
 
 const navLinks = [
   {
@@ -46,19 +45,7 @@ const Header = () => {
     ;<Navigate to="/register" replace={true} />
   }
 
-  //  const {dispatch} =useContext(AuthContext);
-
   const handleLogout = () => {
-    //  dispatch({type:'LOGOUT'})
-
-    //            swal({
-    //                   title: "Logged Out!",
-    //                  text: "You Logged Out Sucessfullyy!",
-    //                  icon: "success",
-    //                  button: "Close!",
-    //                   });
-
-    //  Navigate('/');
     console.log("logged out")
   }
 
@@ -81,7 +68,6 @@ const Header = () => {
               </div>
             </Col>
 
-            {/* { currentUser==null &&  */}
             <Col lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
                 <NavLink
