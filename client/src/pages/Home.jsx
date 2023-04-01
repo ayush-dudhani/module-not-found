@@ -5,6 +5,7 @@ import AboutSection from "../components/UI/AboutSection"
 import { Container, Row, Col } from "reactstrap"
 import ServicesList from "../components/UI/ServicesList"
 // import data from "../assets/data/Data.js"
+import BecomeDriver from "../components/UI/BecomeDriver"
 import Items from "./Items"
 import allData from "../hooks/fetchData"
 const Home = () => {
@@ -40,6 +41,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+      <BecomeDriver />
     </Helmet>
   )
 }
