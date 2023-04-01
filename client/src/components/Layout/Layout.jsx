@@ -1,4 +1,4 @@
-import React from "react"
+import React,{Fragment} from "react"
 import Header from "../Header/Header"
 import Routers from "../../routers/Routers"
 import Footer from "../Footer/Footer"
@@ -10,9 +10,9 @@ const Layout = () => {
       <Header />
 
       <Routers />
-      {/* <About/> */}
+    
 
-      {/* <Footer /> */}
+      <Footer />
     </Fragment>
   )
 }
