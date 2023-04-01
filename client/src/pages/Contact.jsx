@@ -110,7 +110,7 @@ const Contact = () => {
         <Container>
           <Row>
             <Col lg="7" md="7">
-              <h6 className="fw-bold mb-4">Get In Touch</h6>
+              <h6 className="fw-bold mb-4 text-center">Get In Touch</h6>
 
               <Form
                 style={{
@@ -141,14 +141,16 @@ const Contact = () => {
                   />
                 </FormGroup>
                 <FormGroup className="contact__form">
-                  <textarea
+                  <Input
                     value={message}
                     onChange={handleMessage}
                     style={{ width: "580px" }}
                     rows="5"
+                    columns="2"
                     placeholder="Message"
                     className="textarea"
-                  ></textarea>
+                    type="textarea"
+                  />
                 </FormGroup>
 
                 <button
@@ -179,19 +181,42 @@ const Contact = () => {
                     gaikwadvipul196@gmail.com
                   </p>
                 </div>
-
-                <h6 className="fw-bold mt-4">Follow Us</h6>
-
-                <div className=" d-flex align-items-center gap-4 mt-3">
-                  {socialLinks.map((item, index) => (
-                    <Link
-                      to={item.url}
-                      key={index}
-                      className="social__link-icon"
-                    >
-                      <i class={item.icon}></i>
-                    </Link>
-                  ))}
+                <div
+                  className="d-flex flex-column justify-content-center w-auto h-70"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "start",
+                    height: "70%",
+                    backgroundColor: "#f7f7f7",
+                    padding: "10%"
+                  }}
+                >
+                  <p className="section__description mb-0">
+                    Pimpri Chinchwad, Pune
+                  </p>
+                  <div className=" d-flex align-items-center gap-2 justify-content-center">
+                    <h6 className="fs-6 mb-0">Phone:</h6>
+                    <p className="section__description mb-0">9021423716</p>
+                  </div>
+                  <div className=" d-flex align-items-center gap-2">
+                    <h6 className="mb-0 fs-6">Email:</h6>
+                    <p className="section__description mb-0">
+                      rentwithus@gmail.com
+                    </p>
+                  </div>
+                  <h6 className="fw-bold mt-4">Follow Us</h6>
+                  <div className="d-flex align-items-center gap-4 mt-3">
+                    {socialLinks.map((item, index) => (
+                      <Link
+                        to={item.url}
+                        key={index}
+                        className="social__link-icon"
+                      >
+                        <i class={item.icon}></i>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Col>

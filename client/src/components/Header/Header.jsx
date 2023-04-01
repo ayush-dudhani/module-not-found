@@ -129,7 +129,7 @@ const Header = () => {
       {/* =============== header middle =========== */}
       <div className="header__middle">
         <Container>
-          <Row>
+          <Row style={{alignItems:"center"}}>
             <Col lg="4" md="3" sm="4">
               <div className="logo">
                 <h1 style={logoStyleh1}>
@@ -155,7 +155,7 @@ const Header = () => {
             </Col>
 
             <Col lg="3" md="3" sm="4">
-              <div className="header__location d-flex align-items-center gap-2">
+              <div className="header__location h-100 d-flex-column align-items-center justify-content-between gap-2">
                 <span>
                   <i class="ri-earth-line"></i>
                 </span>
@@ -167,7 +167,7 @@ const Header = () => {
             </Col>
 
             <Col lg="3" md="3" sm="4">
-              <div className="header__location d-flex align-items-center gap-2">
+              <div className="header__location h-100 d-flex-column align-items-center justify-content-between gap-2">
                 <span>
                   <i class="ri-time-line"></i>
                 </span>
