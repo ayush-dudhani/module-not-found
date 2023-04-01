@@ -107,23 +107,23 @@ const Header = () => {
       {/* =============== header middle =========== */}
       <div className="header__middle">
         <Container>
-          <Row>
+          <Row style={{alignItems:"center"}}>
             <Col lg="4" md="3" sm="4">
               <div className="logo">
-                <h1 style={logoStyleh1}>
-                  <Link to="/home" className=" d-flex align-items-center gap-2">
+                <h4 style={logoStyleh1}>
+                  <Link to="/home" className=" d-flex-column align-items-center justify-content-center gap-2">
                     <i  class="ri-car-line"></i>
-                    <h1 style={{fontSize:'1.4rem',fontWeight:'bold', padding:'2px 4px',color:"#000d6b" }}> Rent Farming Equipment <br/> Services</h1>
+                    <h4 style={{fontSize:'1.4rem',fontWeight:'bold', padding:'2px 4px',color:"#000d6b" }}> Rent Farming Equipment <br/> Services</h4>
                     {/* <span style={logoSpan}>
                       Rent Farming Equipment <br /> Service
                     </span> */}
                   </Link>
-                </h1>
+                </h4>
               </div>
             </Col>
 
             <Col lg="3" md="3" sm="4">
-              <div className="header__location d-flex align-items-center gap-2">
+              <div className="header__location h-100 d-flex-column align-items-center justify-content-between gap-2">
                 <span>
                   <i class="ri-earth-line"></i>
                 </span>
@@ -135,7 +135,7 @@ const Header = () => {
             </Col>
 
             <Col lg="3" md="3" sm="4">
-              <div className="header__location d-flex align-items-center gap-2">
+              <div className="header__location h-100 d-flex-column align-items-center justify-content-between gap-2">
                 <span>
                   <i class="ri-time-line"></i>
                 </span>

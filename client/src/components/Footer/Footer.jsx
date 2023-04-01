@@ -99,7 +99,7 @@ const Footer = () => {
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
                 <i class="ri-copyright-line"></i>Copyright {year}, Developed by
-                Vipul Gaikwad. All rights reserved.
+                Team Module_Not_Found. All rights reserved.
               </p>
             </div>
           </Col>
