@@ -5,6 +5,7 @@ import Helmet from "../components/Helmet/Helmet"
 import CommonSection from "../components/UI/CommonSection"
 import swal from "sweetalert"
 import "../styles/contact.css"
+import emailjs from "emailjs-com"
 import { useNavigate } from "react-router"
 const socialLinks = [
   {
@@ -24,6 +25,9 @@ const socialLinks = [
     icon: "ri-twitter-line",
   },
 ]
+const SERVICE_ID = "service_v8ubk1n"
+const TEMPLATE_ID = "template_594qxpo"
+const USER_ID = "yrglX7tEFoBjZvO-5"
 
 const Contact = () => {
   const [name, setName] = useState()
@@ -31,28 +35,63 @@ const Contact = () => {
   const [message, setMessgae] = useState()
   const Navigate = useNavigate()
 
-  const HandleSubmit = (event) => {
-    if (name && email && message) {
-      swal({
-        title: "Message Sent!",
-        text: "We'll reach you out soon!",
-        icon: "success",
-        button: "Close!",
-      })
-      setEmail("")
-      setMessgae("")
-      setName("")
-      Navigate("/home")
-    } else {
-      swal({
-        title: "Oops!",
-        text: "Incorrect Message..Try again !",
-        icon: "error",
-        button: "Try again!",
-        timer: "1500",
-      })
+  const HandleSubmit = (e) => {
+    e.preventDefault()
+    let templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
     }
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID).then(
+      (result) => {
+        console.log(result.text)
+
+        swal({
+          title: "Message Sent!",
+          text: "We'll reach you out soon!",
+          icon: "success",
+          button: "Close!",
+        })
+        setEmail("")
+        setMessgae("")
+        setName("")
+        Navigate("/home")
+      },
+      (error) => {
+        console.log(error.text)
+        swal.fire({
+          icon: "error",
+          title: "Ooops, something went wrong",
+          text: error.text,
+        })
+      }
+    )
   }
+
+  //  const HandleSubmit=(event)=>{
+  //    if(name && email && message){
+  //            swal({
+  //                  title:"Message Sent!",
+  //                  text: "We'll reach you out soon!",
+  //                  icon: "success",
+  //                    button: "Close!",
+  //                     });
+  //             setEmail('');
+  //             setMessgae('');
+  //             setName('');
+  //             Navigate('/home')
+  //    }
+  //    else{
+  //               swal({
+  //                    title: "Oops!",
+  //                    text: "Incorrect Message..Try again !",
+  //                    icon: "error",
+  //                    button: "Try again!",
+  //                    timer:'1500'
+  //                     });
+  //    }
+
+  //  }
 
   const handleName = (e) => {
     setName(e.target.value)
@@ -71,15 +110,16 @@ const Contact = () => {
         <Container>
           <Row>
             <Col lg="7" md="7">
-              <h6 className="fw-bold mb-4 text-center">Get In Touch</h6>
+              <h6 className="fw-bold mb-4">Get In Touch</h6>
 
               <Form
                 style={{
                   display: "flex",
                   flexDirection: "column",
+                  height: "94%",
                   backgroundColor: "#f7f7f7",
-                  padding: "2vh 2vw",
-                  borderRadius: "10px",
+                  padding: "35px 60px",
+                  borderRadius: "51px",
                 }}
                 // onSubmit={HandleSubmit}
               >
@@ -95,25 +135,25 @@ const Contact = () => {
                   <Input
                     value={email}
                     onChange={handleEmail}
+                    style={{ width: "343px" }}
                     placeholder="Email"
                     type="email"
                   />
                 </FormGroup>
                 <FormGroup className="contact__form">
-                  <Input
+                  <textarea
                     value={message}
                     onChange={handleMessage}
+                    style={{ width: "580px" }}
                     rows="5"
-                    columns="2"
                     placeholder="Message"
                     className="textarea"
-                    type="textarea"
-                  />
+                  ></textarea>
                 </FormGroup>
 
                 <button
                   onClick={HandleSubmit}
-                  className="contact__btn"
+                  className=" contact__btn"
                   type="submit"
                 >
                   Send Message
