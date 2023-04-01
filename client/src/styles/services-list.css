@@ -17,4 +17,9 @@
   .service__item h6 {
     font-size: 1.1rem;
   }
+  .service__item{
+    text-align: center;
+    width: 80%;
+    margin: 0em auto;
+  }
 }
