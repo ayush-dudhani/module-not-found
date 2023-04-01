@@ -4,6 +4,7 @@ import { Container, Row, Col } from "reactstrap"
 import { Link, NavLink, Navigate } from "react-router-dom"
 import "../../styles/header.css"
 import swal from "sweetalert"
+import { AuthContext } from "../../context/AuthContext"
 
 const navLinks = [
   {
@@ -28,9 +29,6 @@ const navLinks = [
 const handleLogin = () => {
   ;<Navigate to="/login" replace={true} />
 }
-const handleRegister = () => {
-  ;<Navigate to="/register" replace={true} />
-}
 
 const handleGiveonRent = () => {
   ;<Navigate to="/onrent" />
@@ -41,13 +39,28 @@ const logoStyleh1 = {
 }
 
 const Header = () => {
+  const { dispatch } = useContext(AuthContext)
+
   const handleRegister = () => {
     ;<Navigate to="/register" replace={true} />
   }
 
   const handleLogout = () => {
-    console.log("logged out")
+    dispatch({ type: "LOGOUT" })
+
+    swal({
+      title: "Logged Out!",
+      text: "You Logged Out Sucessfullyy!",
+      icon: "success",
+      button: "Close!",
+    })
+
+    Navigate("/")
   }
+
+  const { currentUser } = useContext(AuthContext)
+
+  // console.log(currentUser);
 
   const menuRef = useRef(null)
 
@@ -68,45 +81,47 @@ const Header = () => {
               </div>
             </Col>
 
-            <Col lg="6" md="6" sm="6">
-              <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <NavLink
-                  to="/login"
-                  className=" d-flex align-items-center gap-1"
-                >
-                  <i class="ri-login-circle-line"></i> Login
-                </NavLink>
+            {currentUser == null && (
+              <Col lg="6" md="6" sm="6">
+                <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
+                  <NavLink
+                    to="/login"
+                    className=" d-flex align-items-center gap-1"
+                  >
+                    <i class="ri-login-circle-line"></i> Login
+                  </NavLink>
 
-                <Link
-                  to="/register"
-                  className=" d-flex align-items-center gap-1"
-                  onClick={handleRegister}
-                >
-                  <i class="ri-user-line"></i> Register
-                </Link>
-              </div>
-            </Col>
+                  <Link
+                    to="/register"
+                    className=" d-flex align-items-center gap-1"
+                    onClick={handleRegister}
+                  >
+                    <i class="ri-user-line"></i> Register
+                  </Link>
+                </div>
+              </Col>
+            )}
+            {currentUser != null && (
+              <Col lg="6" md="6" sm="6">
+                <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
+                  <Link
+                    to="/onrent"
+                    className=" d-flex align-items-center gap-1"
+                    onClick={handleGiveonRent}
+                  >
+                    <i class="ri-login-circle-line"></i> Give On Rent
+                  </Link>
 
-            {/* currentUser!=null &&    */}
-            <Col lg="6" md="6" sm="6">
-              <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link
-                  to="/onrent"
-                  className=" d-flex align-items-center gap-1"
-                  onClick={handleGiveonRent}
-                >
-                  <i class="ri-login-circle-line"></i> Give On Rent
-                </Link>
-
-                <Link
-                  to="/register"
-                  className=" d-flex align-items-center gap-1"
-                  onClick={handleLogout}
-                >
-                  <i class="ri-user-line"></i> Logout
-                </Link>
-              </div>
-            </Col>
+                  <Link
+                    to="/register"
+                    className=" d-flex align-items-center gap-1"
+                    onClick={handleLogout}
+                  >
+                    <i class="ri-user-line"></i> Logout
+                  </Link>
+                </div>
+              </Col>
+            )}
           </Row>
         </Container>
       </div>

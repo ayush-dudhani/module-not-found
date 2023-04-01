@@ -7,7 +7,7 @@ import ServicesList from "../components/UI/ServicesList"
 // import data from "../assets/data/Data.js"
 import BecomeDriver from "../components/UI/BecomeDriver"
 import Items from "./Items"
-import allData from "../Hooks/fetchData"
+import allData from "../hooks/fetchData"
 import Testimonial from "../components/UI/Testimonial"
 const Home = () => {
   const { data } = allData()

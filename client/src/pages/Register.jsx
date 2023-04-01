@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import InputForm from "./formInput"
 import { createUserWithEmailAndPassword } from "firebase/auth"
-import { auth } from "../Config/Firebase"
+import { auth } from "../config/Firebase"
 import { useNavigate } from "react-router"
 import styled from "styled-components"
 import swal from "sweetalert"
