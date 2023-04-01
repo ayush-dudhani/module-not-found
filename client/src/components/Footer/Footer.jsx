@@ -73,11 +73,9 @@ const Footer = () => {
           <Col lg="3" md="4" sm="6">
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Head Office</h5>
-              <p className="office__info">123 Akurdi Pune</p>
-              <p className="office__info">Phone: +9021423716</p>
-
-              <p className="office__info">Email: gaikwadvipul196@gmail.com</p>
-
+              <p className="office__info">Pimpri Chinchwad, Maharashtra</p>
+              <p className="office__info">Phone: +91 987654321</p>
+              <p className="office__info">Email: rentwithus@gmail.com</p>
               <p className="office__info">Office Time: 10am - 7pm</p>
             </div>
           </Col>
@@ -98,8 +96,7 @@ const Footer = () => {
           <Col lg="12">
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright {year}, Developed by
-                Vipul Gaikwad. All rights reserved.
+                <i class="ri-copyright-line"></i>Copyright &copy; {year} All rights reserved.
               </p>
             </div>
           </Col>
