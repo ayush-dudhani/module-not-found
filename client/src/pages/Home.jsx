@@ -18,7 +18,7 @@ const Home = () => {
       <AboutSection />
       <section style={{width: "100vw"}}>
         <Container style={{width: "100%"}}>
-          <Row style={{backgroundColor: "#000d6b", padding: "1em 0"}}>
+          <Row style={{backgroundColor: "#000d6b", padding: "1em 0", borderRadius: "15px"}}>
             <Col lg="12" className="mb-5 text-center">
               <h6 className="section__subtitle">See our</h6>
               <h2 className="section__title" style={{color:"white"}}>Popular Services</h2>
