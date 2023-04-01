@@ -6,7 +6,7 @@ import Contact from "../pages/Contact"
 import Register from "../pages/Register"
 import Login from "../pages/Login"
 import EquipmentListing from "../pages/EquipmentListing"
-import getData from '../Hooks/fetchData';
+import getData from '../hooks/fetchData';
 import EquipmentsDetails from "../pages/EquipmentDetails"
 const Routers = () => {
   const {data}=getData();
