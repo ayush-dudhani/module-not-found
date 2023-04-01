@@ -1,3 +1,4 @@
+
 import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
@@ -5,6 +6,7 @@ import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/CommonSection";
 import swal from "sweetalert";
 import "../styles/contact.css";
+import emailjs from 'emailjs-com';
 import { useNavigate } from "react-router";
 const socialLinks = [
   {
@@ -24,6 +26,11 @@ const socialLinks = [
     icon: "ri-twitter-line",
   },
 ];
+const SERVICE_ID = "service_v8ubk1n";
+const TEMPLATE_ID = "template_594qxpo";
+const USER_ID = "yrglX7tEFoBjZvO-5";
+
+
 
 const Contact = () => {
 
@@ -32,31 +39,66 @@ const Contact = () => {
     const[email,setEmail]=useState();
     const[message,setMessgae]=useState();
     const Navigate=useNavigate();
-   
-   const HandleSubmit=(event)=>{
-     if(name && email && message){
-             swal({
-                   title:"Message Sent!",
-                   text: "We'll reach you out soon!",
-                   icon: "success",
-                     button: "Close!",
-                      });
-              setEmail('');
-              setMessgae('');
-              setName('');
-              Navigate('/home')
-     }
-     else{
-                swal({
-                     title: "Oops!",
-                     text: "Incorrect Message..Try again !",
-                     icon: "error",
-                     button: "Try again!",
-                     timer:'1500'
-                      });
-     }
+
+    const HandleSubmit = (e) => {
+      e.preventDefault();
+      let templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+       }
+        emailjs.send(SERVICE_ID, TEMPLATE_ID,templateParams , USER_ID)
+          .then((result) => {
+            console.log(result.text);
+            
+              swal({
+                      title:"Message Sent!",
+                      text: "We'll reach you out soon!",
+                      icon: "success",
+                        button: "Close!",
+                        });
+                setEmail('');
+                setMessgae('');
+                setName('');
+                Navigate('/home')
+            
+          }, (error) => {
+            console.log(error.text);
+            swal.fire({
+              icon: 'error',
+              title: 'Ooops, something went wrong',
+              text: error.text,
+            })
+          });
+          
+        };
     
-   }
+    
+   
+  //  const HandleSubmit=(event)=>{
+  //    if(name && email && message){
+  //            swal({
+  //                  title:"Message Sent!",
+  //                  text: "We'll reach you out soon!",
+  //                  icon: "success",
+  //                    button: "Close!",
+  //                     });
+  //             setEmail('');
+  //             setMessgae('');
+  //             setName('');
+  //             Navigate('/home')
+  //    }
+  //    else{
+  //               swal({
+  //                    title: "Oops!",
+  //                    text: "Incorrect Message..Try again !",
+  //                    icon: "error",
+  //                    button: "Try again!",
+  //                    timer:'1500'
+  //                     });
+  //    }
+    
+  //  }
  
     const handleName=(e)=>{
         setName(e.target.value)   
@@ -148,5 +190,6 @@ const Contact = () => {
     </Helmet>
   );
 };
+
 
 export default Contact;
