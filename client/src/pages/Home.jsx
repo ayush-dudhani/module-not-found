@@ -1,7 +1,7 @@
 import React from "react"
-
+import Helmet from "../components/Helmet/Helmet"
 const Home = () => {
-  return <h1>This is Home </h1>
+  return <Helmet title="Home">{/* <HeroSlider /> */}</Helmet>
 }
 
 export default Home
