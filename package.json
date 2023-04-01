@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase": "^9.19.1",
+    "remixicon": "^3.0.0"
+  }
+}
