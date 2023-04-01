@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap"
 import Helmet from "../components/Helmet/Helmet"
 import CommonSection from "../components/UI/CommonSection"
 import Items from "./Items"
-import allData from "../hooks/fetchData"
+import allData from "../Hooks/fetchData"
 
 const ItemListing = () => {
   const { data } = allData()
