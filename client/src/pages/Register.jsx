@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 
 import InputForm from "./formInput"
-// import { createUserWithEmailAndPassword } from "firebase/auth"
-// import { auth } from "../Config/Firebase"
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { auth } from "../Config/Firebase"
 import { useNavigate } from "react-router"
 import styled from "styled-components"
-// import swal from "sweetalert"
+import swal from "sweetalert"
 const Container = styled.div`
   padding: 0%;
   margin: 0%;
@@ -97,36 +97,36 @@ const App = () => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
 
-  //  console.log(values);
+  console.log(values)
   const HandleSubmit = (e) => {
     e.preventDefault()
 
-    // const email = values.email
-    // const password = values.password
-    // createUserWithEmailAndPassword(auth, email, password)
-    //   .then((userCredential) => {
-    //     const user = userCredential.user
+    const email = values.email
+    const password = values.password
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user
 
-    //     swal({
-    //       title: "Sucess !!",
-    //       text: "User Registered Sucessfullyy!",
-    //       icon: "success",
-    //       button: "Close!",
-    //     })
+        swal({
+          title: "Sucess !!",
+          text: "User Registered Sucessfullyy!",
+          icon: "success",
+          button: "Close!",
+        })
 
-    //     Navigate("/login")
+        Navigate("/login")
 
-    //     console.log(user)
-    //   })
-    //   .catch((error) => {
-    //     setError(error)
-    //     swal({
-    //       title: "Oops!",
-    //       text: "Something went wrong!",
-    //       icon: "error",
-    //       button: "Try again!",
-    //     })
-    //   })
+        console.log(user)
+      })
+      .catch((error) => {
+        setError(error)
+        swal({
+          title: "Oops!",
+          text: "Something went wrong!",
+          icon: "error",
+          button: "Try again!",
+        })
+      })
   }
   return (
     <Container>
