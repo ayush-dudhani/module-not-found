@@ -6,9 +6,9 @@ import Contact from "../pages/Contact"
 import Register from "../pages/Register"
 import Login from "../pages/Login"
 import EquipmentListing from "../pages/EquipmentListing"
-import getData from '../hooks/fetchData';
+import getData from "../hooks/fetchData"
 import EquipmentsDetails from "../pages/EquipmentDetails"
-import onRent from "../pages/onRent"
+import OnRent from "../pages/OnRent"
 import Inputs from "../components/Layout/Input"
 const Routers = () => {
   const { data } = getData()
@@ -18,7 +18,7 @@ const Routers = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/onrent" element={<onRent inputs={Inputs} />} />
+      <Route path="/onrent" element={<OnRent inputs={Inputs} />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/equipments" element={<EquipmentListing />} />
