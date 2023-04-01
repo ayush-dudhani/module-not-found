@@ -196,7 +196,7 @@ const Checkout=()=>{
                     style={{
                         width:'60%',
                     }}
-                    >{`$${price*formData.days}`}
+                    >{`₹${price*formData.days}`}
                   
                      </BButton>
                      
@@ -206,7 +206,7 @@ const Checkout=()=>{
                     style={{
                         width:'60%',
                     }}
-                    >{`$${price}`}
+                    >{`₹${price}`}
                   
                      </BButton>
             
