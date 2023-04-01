@@ -1,14 +1,13 @@
-import React from "react";
-
-import CommonSection from "../components/UI/CommonSection.jsx";
-import Helmet from "../components/Helmet/Helmet";
-import AboutSection from "../components/UI/AboutSection";
-import { Container,Row} from "reactstrap";
+import React from "react"
+import CommonSection from "../components/UI/CommonSection"
+import Helmet from "../components/Helmet/Helmet"
+import AboutSection from "../components/UI/AboutSection"
+import { Container, Row } from "reactstrap"
 // import BecomeDriverSection from "../components/UI/BecomeDriverSection";
 
 // import driveImg from "../assets/all-images/w-100g";
 // import OurMembers from "../components/UI/OurMembers";
-import "../styles/about.css";
+import "../styles/about.css"
 
 const About = () => {
   return (
@@ -75,7 +74,7 @@ const About = () => {
         </Container>
       </section> */}
     </Helmet>
-  );
-};
+  )
+}
 
-export default About;
+export default About

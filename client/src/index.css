@@ -44,23 +44,22 @@ ul {
   list-style: none;
 }
 .section__subtitle {
-    color: #f9a826;
-    font-weight: 700;
-    line-height: 27px;
-    font-size: 1.9rem;
+  color: #f9a826;
+  font-weight: 700;
+  line-height: 27px;
+  font-size: 1.9rem;
 }
 .section__title {
-    color: #000d6b;
-    font-weight: 700;
-    line-height: 64px;
-    font-size: 1.8rem;
+  color: #000d6b;
+  font-weight: 700;
+  line-height: 64px;
+  font-size: 1.8rem;
 }
-
 
 .section__description {
   color: #7c8a97;
   font-size: 0.9rem;
-  font-weight:700;
+  font-weight: 700;
   line-height: 30px;
 }
 
