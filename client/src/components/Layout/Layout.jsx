@@ -8,8 +8,6 @@ const Layout = () => {
     <>
       <Header />
       <Routers />
-      <About/>
-
       <Footer />
     </>
   )
