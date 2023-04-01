@@ -17,7 +17,7 @@ const navLinks = [
   },
   {
     path: "/equipments",
-    display: "Farming Eqipments",
+    display: "Farming Equipments",
   },
 
   {
