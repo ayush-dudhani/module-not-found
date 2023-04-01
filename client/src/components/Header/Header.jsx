@@ -74,7 +74,6 @@ const Header = () => {
               </div>
             </Col>
 
-           {/* { currentUser==null &&  */}
              <Col lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
                 <NavLink to="/login" className=" d-flex align-items-center gap-1" >
