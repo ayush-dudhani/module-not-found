@@ -5,13 +5,13 @@ import Footer from "../Footer/Footer"
 import About from "../../pages/About"
 const Layout = () => {
   return (
-    <Fragment>
+    <>
       <Header />
       <Routers />
-      
+      <About/>
 
       <Footer />
-    </Fragment>
+    </>
   )
 }
 
