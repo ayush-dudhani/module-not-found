@@ -14,6 +14,11 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "reactstrap": "^9.1.8",
+    "slick-carousel": "^1.8.1",
+<<<<<<< HEAD
+=======
+    "sweetalert": "^2.1.2",
+>>>>>>> 8a1299feae8114a5ab39e53d912473e1283796e1
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -39,8 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.3.1"
   }
 }
