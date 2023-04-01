@@ -1,10 +1,9 @@
-import React, { useRef,useContext } from "react";
+import React, { useRef, useContext } from "react"
 
-import { Container, Row, Col } from "reactstrap";
-import { Link, NavLink,Navigate } from "react-router-dom";
-import "../../styles/header.css";
-import swal from "sweetalert";
-
+import { Container, Row, Col } from "reactstrap"
+import { Link, NavLink, Navigate } from "react-router-dom"
+import "../../styles/header.css"
+import swal from "sweetalert"
 
 const navLinks = [
   {
@@ -24,40 +23,35 @@ const navLinks = [
     path: "/contact",
     display: "Contact",
   },
+]
 
-  
-];
-
-
-const handleLogin=()=>{
-
-       <Navigate to="/login" replace={true} />
-  }
-const handleRegister=()=>{
-       <Navigate to="/register" replace={true} />
+const handleLogin = () => {
+  ;<Navigate to="/login" replace={true} />
+}
+const handleRegister = () => {
+  ;<Navigate to="/register" replace={true} />
 }
 
-const handleGiveonRent=()=>{
-       <Navigate to="/onrent" />
+const handleGiveonRent = () => {
+  ;<Navigate to="/onrent" />
 }
 
-const logoStyleh1={
-     lineHeight: '1.5rem'
+const logoStyleh1 = {
+  lineHeight: "1.5rem",
 }
 
 const Header = () => {
-
-
-  const handleLogout=()=>{
-    console.log("logged out");
+  const handleRegister = () => {
+    ;<Navigate to="/register" replace={true} />
   }
 
+  const handleLogout = () => {
+    console.log("logged out")
+  }
 
-  const menuRef = useRef(null);
+  const menuRef = useRef(null)
 
-  
-
-  const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
+  const toggleMenu = () => menuRef.current.classList.toggle("menu__active")
 
   return (
     <header className="header">
@@ -68,38 +62,51 @@ const Header = () => {
             <Col lg="6" md="6" sm="6">
               <div className="header__top__left">
                 <span>Need Help?</span>
-                <span style={{color:'white'}} className="header__top__help">
+                <span style={{ color: "white" }} className="header__top__help">
                   <i class="ri-phone-fill"></i> 9021423716
                 </span>
               </div>
             </Col>
 
-             <Col lg="6" md="6" sm="6">
+            <Col lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <NavLink to="/login" className=" d-flex align-items-center gap-1" >
-                  <i  class="ri-login-circle-line"></i> Login
+                <NavLink
+                  to="/login"
+                  className=" d-flex align-items-center gap-1"
+                >
+                  <i class="ri-login-circle-line"></i> Login
                 </NavLink>
 
-                <Link to="/register" className=" d-flex align-items-center gap-1" onClick={handleRegister}>
+                <Link
+                  to="/register"
+                  className=" d-flex align-items-center gap-1"
+                  onClick={handleRegister}
+                >
                   <i class="ri-user-line"></i> Register
                 </Link>
               </div>
             </Col>
-           
-           
-             {/* currentUser!=null &&    */}
-              <Col lg="6" md="6" sm="6">
+
+            {/* currentUser!=null &&    */}
+            <Col lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link to="/onrent" className=" d-flex align-items-center gap-1" onClick={handleGiveonRent}>
-                  <i  class="ri-login-circle-line"></i> Give On Rent
+                <Link
+                  to="/onrent"
+                  className=" d-flex align-items-center gap-1"
+                  onClick={handleGiveonRent}
+                >
+                  <i class="ri-login-circle-line"></i> Give On Rent
                 </Link>
 
-                <Link to="/register" className=" d-flex align-items-center gap-1" onClick={handleLogout}>
+                <Link
+                  to="/register"
+                  className=" d-flex align-items-center gap-1"
+                  onClick={handleLogout}
+                >
                   <i class="ri-user-line"></i> Logout
                 </Link>
               </div>
             </Col>
-            
           </Row>
         </Container>
       </div>
@@ -112,8 +119,18 @@ const Header = () => {
               <div className="logo">
                 <h1 style={logoStyleh1}>
                   <Link to="/home" className=" d-flex align-items-center gap-2">
-                    <i  class="ri-car-line"></i>
-                    <h1 style={{fontSize:'1.4rem',fontWeight:'bold', padding:'2px 4px',color:"#000d6b" }}> Rent Farming Equipment <br/> Services</h1>
+                    <i class="ri-car-line"></i>
+                    <h1
+                      style={{
+                        fontSize: "1.4rem",
+                        fontWeight: "bold",
+                        padding: "2px 4px",
+                        color: "#000d6b",
+                      }}
+                    >
+                      {" "}
+                      Rent Farming Equipment <br /> Services
+                    </h1>
                     {/* <span style={logoSpan}>
                       Rent Farming Equipment <br /> Service
                     </span> */}
@@ -152,9 +169,10 @@ const Header = () => {
               sm="3"
               className=" d-flex align-items-center justify-content-end "
             >
-              <button  className="header__btn btn ">
+              <button className="header__btn btn ">
                 <Link to="/contact">
-                  <i style={{alignItems:"center"}} class="ri-phone-line"></i> Request a call
+                  <i style={{ alignItems: "center" }} class="ri-phone-line"></i>{" "}
+                  Request a call
                 </Link>
               </button>
             </Col>
@@ -199,8 +217,7 @@ const Header = () => {
         </Container>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
-
+export default Header
