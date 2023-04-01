@@ -10,9 +10,9 @@ const Layout = () => {
       <Header />
 
       <Routers />
-      <About/>
+      {/* <About/> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </Fragment>
   )
 }
