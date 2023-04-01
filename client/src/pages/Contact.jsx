@@ -124,17 +124,19 @@ const Contact = () => {
             <Col lg="5" md="5">
               <div className="contact__info" style={{ height: "100%" }}>
                 <div className="h-30">
-                  <h6 className="fw-bold text-center mb-3">
+                  <h6 className="fw-bold text-center mb-4">
                     Contact Information
                   </h6>
                 </div>
                 <div
-                  className="d-flex flex-column align-items-center justify-content-center w-auto h-70"
+                  className="d-flex flex-column justify-content-center w-auto h-70"
                   style={{
                     display: "flex",
                     justifyContent: "center",
-                    alignItems: "center",
+                    alignItems: "start",
                     height: "70%",
+                    backgroundColor: "#f7f7f7",
+                    padding: "10%"
                   }}
                 >
                   <p className="section__description mb-0">
