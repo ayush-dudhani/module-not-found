@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-
 import InputForm from "./formInput"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../Config/Firebase"

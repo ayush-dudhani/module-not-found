@@ -6,17 +6,17 @@ import aboutImg from "../../assets/all-images/slider-img/Slider2.jpeg"
 const AboutSection = ({ aboutClass }) => {
   return (
     <section
-      className="about__section"
+      className="about__section w-100"
       style={
         aboutClass === "aboutPage" ? { marginTop: "0px" } : { marginTop: "0px" }
       }
     >
-      <Container>
-        <Row>
-          <Col style={{ paddingRight: "38px" }} lg="6" md="6">
-            <div className="about__section-content">
+      <Container style={{width:"100%"}}>
+        <Row style={{width:"100%", alignItems: "center"}}>
+          <Col style={{ padding: "1em"}} lg="6" md="6" >
+            <div className="about__section-content w-100">
               <h4 className="section__subtitle">About Us</h4>
-              <h2 className="section__title">
+              <h2 className="section__title ">
                 Welcome to Farming Equipment rent service
               </h2>
               <p className="section__description">
@@ -32,28 +32,24 @@ const AboutSection = ({ aboutClass }) => {
                 advance agriculture.
               </p>
 
-              <div className="about__section-item d-flex align-items-center">
-                <p className="section__description d-flex align-items-center gap-2">
+              <div className="about__section-item ">
+                
+                <p className="section__description">
                   <i class="ri-checkbox-circle-line"></i> Democratize technology
                   for small landholders
                 </p>
 
-                <p className="section__description d-flex align-items-center gap-2">
+                <p className="section__description">
                   <i class="ri-checkbox-circle-line"></i> Make India a nation of
                   Champion Farmers
                 </p>
-              </div>
-
-              <div
-                style={{ columnGap: "1rem" }}
-                className="about__section-item d-flex align-items-center"
-              >
-                <p className="section__description d-flex align-items-center gap-2">
+              
+                <p className="section__description">
                   <i class="ri-checkbox-circle-line"></i>Famers power India and
                   we empower farmers.
                 </p>
 
-                <p className="section__description d-flex align-items-center gap-2">
+                <p className="section__description">
                   <i class="ri-checkbox-circle-line"></i> Together we advance
                   agriculture.
                 </p>
