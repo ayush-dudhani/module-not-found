@@ -1,3 +1,4 @@
+
 // import all images from assets/images directory
 // import img01 from "../all-images/cars-img/nissan-offer.png";
 import img02 from "../all-images/cars-img/offer-toyota.png";
