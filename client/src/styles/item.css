@@ -2,6 +2,8 @@
   border: 1px solid #7c8a9736;
   padding: 20px;
   border-radius: 5px;
+  height: 420px;
+  width: 300px;
 }
 
 .item-info span i {
@@ -45,6 +47,9 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .item{
+    margin: 0.8em auto;
+  }
   .item h4 {
     font-size: 1.1rem;
     margin-bottom: 0;

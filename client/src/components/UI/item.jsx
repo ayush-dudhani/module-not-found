@@ -1,6 +1,6 @@
 import { Col } from "reactstrap"
 import { Link } from "react-router-dom"
-import "../styles/item.css"
+import "../styles/car-item.css"
 
 const Item = (props) => {
   const { id, img, displayName, Price, address, phone } = props.item

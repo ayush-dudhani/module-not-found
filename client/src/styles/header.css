@@ -46,21 +46,21 @@
     padding: 20px 0px;
   }
   
-  .logo h1 a span {
+  /* .logo h4 a span {
     font-size: 1.5rem;
-  }
+  } */
   
-  .logo h1 a i {
+  /* .logo h4 a i {
     font-size: 2.2rem;
-  }
+  } */
   
-  .logo h1 a {
+  .logo h4 a {
     text-decoration: none;
     color: #000d6b;
     font-weight: 700;
   }
   
-  .logo h1 {
+  .logo h4 {
     line-height: 1.5rem;
   }
   

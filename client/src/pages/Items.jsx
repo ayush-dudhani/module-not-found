@@ -9,7 +9,7 @@ const Item = (props) => {
     <Col lg="4" md="4" sm="6" className="mb-5">
       <div className="item">
         <div className="img">
-          <img src={img} alt="" className="w-100" />
+          <img src={img} alt="" style={{width: "250px", height: "130px", marginLeft:"auto", marginRight: "auto", borderRadius: "10px"}} />
         </div>
 
         <div className="item-content mt-4">
@@ -29,14 +29,15 @@ const Item = (props) => {
               <i class="ri-timer-flash-line"></i> {speed}
             </span> */}
           </div>
-
-          <button className=" w-50 item-btn car__btn-rent">
+          <div style={{display: "flex", justifyContent: "space-between"}}>
+          <button className="item-btn car__btn-rent" style={{width: "40%", borderRadius:"5px"}}>
             <Link to={`/equipments/${id}`}>Rent</Link>
           </button>
 
-          <button className=" w-50 item-btn car__btn-details">
+          <button className="item-btn car__btn-details" style={{width: "40%", borderRadius:"5px"}}>
             <Link to={`/equipments/${id}`}>Details</Link>
           </button>
+          </div>
         </div>
       </div>
     </Col>

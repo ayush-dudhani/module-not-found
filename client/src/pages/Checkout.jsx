@@ -1,8 +1,5 @@
-
-
-
 import {Modal } from "antd";
-import 'antd/dist/rent.css';
+// import 'antd/dist/.css';
 import {db} from '../Config/Firebase';
   import { collection, addDoc } from "firebase/firestore"; 
 import { doc, getDoc } from "firebase/firestore";
