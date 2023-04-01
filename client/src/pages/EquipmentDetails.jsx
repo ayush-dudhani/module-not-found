@@ -147,7 +147,7 @@ const EquipmentsDetails = (props) => {
            </Button>}
           
           {!currentUser && 
-          <h2>To book item you need to login !! </h2>
+          <Button>Book Now</Button>
           
             }
           </div>
