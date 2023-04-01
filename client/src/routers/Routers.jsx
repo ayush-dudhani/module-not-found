@@ -6,7 +6,7 @@ import Contact from "../pages/Contact"
 import Register from "../pages/Register"
 import Login from "../pages/Login"
 import EquipmentListing from "../pages/EquipmentListing"
-import getData from "../hooks/fetchData"
+import getData from '../hooks/fetchData';
 import EquipmentsDetails from "../pages/EquipmentDetails"
 import onRent from "../pages/onRent"
 import Inputs from "../components/Layout/Input"

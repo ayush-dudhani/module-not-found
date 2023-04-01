@@ -1,14 +1,14 @@
-import React from "react"
-import { Container, Row, Col } from "reactstrap"
-import Helmet from "../components/Helmet/Helmet"
-import CommonSection from "../components/UI/CommonSection"
-import Items from "./Items"
-import allData from "../hooks/fetchData"
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import Helmet from "../components/Helmet/Helmet";
+import CommonSection from "../components/UI/CommonSection";
+import Items from "./Items";
+import allData from "../hooks/fetchData";
 
 const ItemListing = () => {
-  const { data } = allData()
+  const { data } = allData();
 
-  console.log(data)
+  console.log(data);
 
   return (
     <Helmet title="Equipments">
@@ -35,7 +35,7 @@ const ItemListing = () => {
         </Container>
       </section>
     </Helmet>
-  )
-}
+  );
+};
 
-export default ItemListing
+export default ItemListing;
