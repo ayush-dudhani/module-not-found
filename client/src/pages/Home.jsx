@@ -5,8 +5,12 @@ import AboutSection from "../components/UI/AboutSection"
 import { Container, Row, Col } from "reactstrap"
 import ServicesList from "../components/UI/ServicesList"
 // import data from "../assets/data/Data.js"
-// import Items from "../components/UI/item"
+import BecomeDriver from "../components/UI/BecomeDriver"
+import Items from "./Items"
+import allData from "../Hooks/fetchData"
+import Testimonial from "../components/UI/Testimonial"
 const Home = () => {
+  const { data } = allData()
   return (
     <Helmet title="Home">
       {" "}
@@ -24,7 +28,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      {/* <section>
+      <section>
         <Container>
           <Row>
             <Col lg="12" className="text-center mb-5">
@@ -37,7 +41,20 @@ const Home = () => {
             ))}
           </Row>
         </Container>
-      </section> */}
+      </section>
+      <BecomeDriver />
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="mb-4 text-center">
+              <h6 className="section__subtitle">Our clients says</h6>
+              {/* <h2 className="section__title">Testimonials</h2> */}
+            </Col>
+
+            <Testimonial />
+          </Row>
+        </Container>
+      </section>
     </Helmet>
   )
 }

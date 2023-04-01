@@ -1,11 +1,12 @@
-import React, { useState } from "react"
-
+import React, { useState, useContext } from "react"
+import styled from "styled-components"
 import InputForm from "./formInput"
-import { createUserWithEmailAndPassword } from "firebase/auth"
+import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../Config/Firebase"
 import { useNavigate } from "react-router"
-import styled from "styled-components"
+// import { AuthContext } from "../context/AuthContext"
 import swal from "sweetalert"
+
 const Container = styled.div`
   padding: 0%;
   margin: 0%;
@@ -15,13 +16,13 @@ const Container = styled.div`
   height: 100vh;
   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(80, 45, 45, 0.3)),
     url("https://img.krishijagran.com/media/54152/1601348576farmer.png");
-  /* url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"); */
+
   background-size: cover;
   background-position: center;
 `
 
 const Wrapper = styled.div`
-  height: 95%;
+  height: 80%;
   background-color: white;
   padding: 0px 60px;
   border-radius: 10px;
@@ -50,27 +51,15 @@ const Button = styled.button`
 const inputs = [
   {
     id: 1,
-    name: "Name",
-    errorMessage:
-      "Username is invalid it should be in between 3-16 character and should'nt include special character ",
-    type: "text",
-    placeholder: "Username",
-    required: true,
-
-    label: "Name",
-  },
-
-  {
-    id: 2,
     name: "email",
     type: "email",
     errorMessage: "It should be valid email Address",
     placeholder: "email",
     required: true,
-    label: "Email",
+    label: "email",
   },
   {
-    id: 3,
+    id: 2,
     name: "password",
     type: "text",
     errorMessage:
@@ -82,44 +71,38 @@ const inputs = [
   },
 ]
 
-const App = () => {
-  const [error, setError] = useState(false)
+const SignIn = () => {
+  const Navigate = useNavigate()
+
+  // const { dispatch } = useContext(AuthContext)
 
   const [values, setValues] = useState({
-    name: "",
     email: "",
     password: "",
   })
-  const Navigate = useNavigate()
 
-  const handleChange = (e) => {
-    e.preventDefault()
-    setValues({ ...values, [e.target.name]: e.target.value })
-  }
-
-  console.log(values)
   const HandleSubmit = (e) => {
     e.preventDefault()
 
     const email = values.email
     const password = values.password
-    createUserWithEmailAndPassword(auth, email, password)
+
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user
 
+        // dispatch({ type: "LOGIN", payload: user })
+
         swal({
-          title: "Sucess !!",
-          text: "User Registered Sucessfullyy!",
+          title: "Logged In!",
+          text: "You Logged In Sucessfullyy!",
           icon: "success",
           button: "Close!",
         })
 
-        Navigate("/login")
-
-        console.log(user)
+        Navigate("/")
       })
       .catch((error) => {
-        setError(error)
         swal({
           title: "Oops!",
           text: "Something went wrong!",
@@ -128,10 +111,16 @@ const App = () => {
         })
       })
   }
+
+  const handleChange = (e) => {
+    e.preventDefault()
+    setValues({ ...values, [e.target.name]: e.target.value })
+  }
+
   return (
     <Container>
       <Wrapper>
-        <Title>Register</Title>
+        <Title>Login</Title>
 
         {inputs.map((input) => (
           <InputForm
@@ -142,10 +131,14 @@ const App = () => {
           />
         ))}
 
-        <Button onClick={HandleSubmit}> Submit</Button>
-        {error && <span>Wrong Email or Password !!</span>}
+        <Button type="submit" onClick={HandleSubmit}>
+          {" "}
+          Submit
+        </Button>
+        {/* {error &&  <span>Wrong Email or Password !!</span> }  */}
       </Wrapper>
     </Container>
   )
 }
-export default App
+
+export default SignIn
