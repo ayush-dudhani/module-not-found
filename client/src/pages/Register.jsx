@@ -130,7 +130,7 @@ const App = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>Register</Title>
+        <h1 className="d-flex justify-content-center">Register</h1>
 
         {inputs.map((input) => (
           <InputForm
@@ -141,7 +141,7 @@ const App = () => {
           />
         ))}
 
-        <Button onClick={HandleSubmit}> Submit</Button>
+        <button className="primary d-flex justify-content-center mx-auto" onClick={HandleSubmit}> Submit</button>
         {error && <span>Wrong Email or Password !!</span>}
       </Wrapper>
     </Container>

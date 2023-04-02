@@ -133,7 +133,7 @@ const Header = () => {
             <Col lg="4" md="3" sm="4">
               <div className="logo">
                 <h1 style={logoStyleh1}>
-                  <Link to="/home" className=" d-flex align-items-center gap-2">
+                  <Link to="/home" className=" d-flex align-items-center gap-2" style={{textDecoration:"none"}}>
                     <i class="ri-car-line"></i>
                     <h1
                       style={{

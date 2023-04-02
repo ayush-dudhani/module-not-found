@@ -40,7 +40,7 @@ const Footer = () => {
           <Col lg="4" md="4" sm="12">
             <div className="logo footer__logo">
               <h1>
-                <Link to="/home" className=" d-flex align-items-center gap-2">
+                <Link to="/home" className=" d-flex align-items-center gap-2" style={{textDecoration:"none"}} >
                   <i class="ri-tools-line"></i>
                   <span>
                     Rent Farming Eqipment <br /> Service
@@ -84,7 +84,7 @@ const Footer = () => {
             <div className="mb-4">
               <h5 className="footer__link-title">Newsletter</h5>
               <p className="section__description">Subscribe our newsletter</p>
-              <div className="newsletter">
+              <div className="newsletter" style={{borderRadius: "10px"}}>
                 <input type="email" placeholder="Email" />
                 <span>
                   <i class="ri-send-plane-line"></i>
@@ -96,7 +96,7 @@ const Footer = () => {
           <Col lg="12">
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright &copy; {year} All rights reserved.
+                Copyright &copy; {year} All rights reserved.
               </p>
             </div>
           </Col>
