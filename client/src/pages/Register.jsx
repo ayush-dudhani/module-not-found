@@ -131,7 +131,6 @@ const App = () => {
     <Container>
       <div style={{display:"flex", alignItems:"center", justifyContent:"center", backgroundColor:"rgba(255, 255, 255, 0.5)", backdropFilter: "blur(10px)", padding: "2em", borderRadius: "10px"}}>
       <div>
-        <Title>Register</Title>
         <h1 className="d-flex justify-content-center">Register</h1>
 
         {inputs.map((input) => (
