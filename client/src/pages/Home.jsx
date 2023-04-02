@@ -9,6 +9,7 @@ import BecomeDriver from "../components/UI/BecomeDriver"
 import Items from "./Items"
 import allData from "../hooks/fetchData"
 import Testimonial from "../components/UI/Testimonial"
+import BlogList from "../pages/Blog"
 const Home = () => {
   const { data } = allData()
   return (
@@ -16,12 +17,20 @@ const Home = () => {
       {" "}
       <HeroSlider />
       <AboutSection />
-      <section style={{width: "100vw"}}>
-        <Container style={{width: "100%"}}>
-          <Row style={{backgroundColor: "#000d6b", padding: "1em 0", borderRadius: "15px"}}>
+      <section style={{ width: "100vw" }}>
+        <Container style={{ width: "100%" }}>
+          <Row
+            style={{
+              backgroundColor: "#000d6b",
+              padding: "1em 0",
+              borderRadius: "15px",
+            }}
+          >
             <Col lg="12" className="mb-5 text-center">
               <h6 className="section__subtitle">See our</h6>
-              <h2 className="section__title" style={{color:"white"}}>Popular Services</h2>
+              <h2 className="section__title" style={{ color: "white" }}>
+                Popular Services
+              </h2>
             </Col>
 
             <ServicesList />
@@ -52,6 +61,18 @@ const Home = () => {
             </Col>
 
             <Testimonial />
+          </Row>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="mb-5 text-center">
+              <h6 className="section__subtitle">Explore our blogs</h6>
+              <h2 className="section__title">Latest Blogs</h2>
+            </Col>
+
+            <BlogList />
           </Row>
         </Container>
       </section>
