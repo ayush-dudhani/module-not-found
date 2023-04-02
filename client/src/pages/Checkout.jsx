@@ -86,6 +86,7 @@ const Checkout=()=>{
   // console.log(idd);
       let arr=[];
         const [billChargeModal, setBillChargeModal] = useState(false);
+        const [isAgreementOn, setIsAgreementOn] = useState(false);
       const [data,setData]=useState({})
 
  
@@ -137,8 +138,11 @@ const Checkout=()=>{
 
   
   };
-  
+  const handleAgreement = () =>{
+      addDetails();
+  }
    const addDetails=async()=>{
+    setIsAgreementOn(false);
      setBillChargeModal(true);
      const docRef = await addDoc(collection(db, "orders"), {
           formData
@@ -166,19 +170,19 @@ const Checkout=()=>{
            <Title style={{marginBottom:'0px'}}>Check Out Form</Title>
             <div style={{margin:'10px'}} className='Form-inputs'>
                <label >Full Name</label>
-              <Input onChange={handleInput}  id='name' placeholder='Full Name' ></Input>
+              <Input onChange={handleInput}  id='name' placeholder='Full Name'></Input>
 
               <label style={{paddingTop:'10px'}}>Address</label>
-             <Input  onChange={handleInput} id='add' placeholder='Address'></Input>
+             <Input  onChange={handleInput} id='add' placeholder='Address' type="text"></Input>
 
             
                <label  style={{paddingTop:'10px'}}>Pincode</label>
-               <Input  onChange={handleInput} id='pin' placeholder='Pincode'></Input>
+               <Input  onChange={handleInput} id='pin' placeholder='Pincode' inputmode="numeric" type="text"  pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$"></Input>
 
 
 
              <label style={{paddingTop:'10px'}}>No of days </label>
-            <Input   onChange={handleInput} id='days' placeholder='Number of days you want to rent the equipment'></Input>
+            <Input   onChange={handleInput} id='days' type="number" min={1} placeholder='Number of days you want to rent the equipment'></Input>
          
             
             <div style=
@@ -186,33 +190,31 @@ const Checkout=()=>{
                   paddingTop:'10px',
                   display:'flex',
                   paddingRight:'80px'
-                  
-                
-                  
+  
                }}>
                  {
                   formData.days>0  ?  
-                   <BButton
+                   <h1
                     style={{
                         width:'60%',
                     }}
-                    >{`$${price*formData.days}`}
+                    >{`₹${price*formData.days}`}
                   
-                     </BButton>
+                     </h1>
                      
                    :  
                     
-                      <BButton
+                      <h1
                     style={{
                         width:'60%',
                     }}
-                    >{`$${price}`}
+                    >{`₹${price}`}
                   
-                     </BButton>
+                     </h1>
             
 
                  }
-            {formData.name && formData.add && formData.pin && formData.days  &&  <BButton  onClick={addDetails}>Check out</BButton>}
+            {formData.name && formData.add && formData.pin && formData.days  &&  <button className="primary" onClick={() => setIsAgreementOn(true)}>Check out</button>}
 
             </div>
       
@@ -223,41 +225,58 @@ const Checkout=()=>{
 
 
         <Modal
-        style={{width:'80px',}}
         title="Charge Bill"
-        visible={billChargeModal}
+        open={billChargeModal}
         footer={false}
-        onCancel={() => setBillChargeModal(false)}
+        onCancel={() => {
+          setBillChargeModal(false)
+          setIsAgreementOn(false)
+        }}
       >
         {" "}
+       
         
       <h3 style={{
         fontFamily:' "Source Sans Pro", sans-serif',
             color: '#000d6b',
           fontWeight: '600',
-    
       }}>
-           Please Click on button below !!
+           Pay Using Debit Card
       </h3>
 
       
 
        <StripeCheckout
         stripeKey='pk_test_4TbuO6qAW2XPuce1Q6ywrGP200NrDZ2233'
-         token={handleToken}
+        token={handleToken}
+        currency="INR"
         amount={product.price * 100}
         name="Rental Services"
         billingAddress
         shippingAddress
         onClick={()=>setBillChargeModal(false)}
       />
-
-      
-        <BButton onClick={()=>setBillChargeModal(false)}> Close</BButton>
-     
-
-     
          {" "}
+      </Modal>
+
+      <Modal
+        title="TERMS AND CONDITIONS FOR EQUIPMENT RENTAL"
+        open={isAgreementOn}
+        onOk={handleAgreement}
+        onCancel={() => setIsAgreementOn(false)}
+      >
+        <p>Agreement to Rent: By renting equipment from us, you agree to all the terms and conditions outlined in this agreement.</p>
+        <p>Rental Period: The rental period starts on the date specified in the agreement and ends on the date specified. Any additional days of rental will be charged at the daily rental rate.</p>
+        <p>Payment: The full rental payment is due at the beginning of the rental period. A security deposit may also be required and will be refunded at the end of the rental period, provided the equipment is returned in the same condition it was rented.</p>
+        <p>Use of Equipment: The equipment may only be used for the purposes for which it was intended. Any other use of the equipment may result in damage and the renter will be responsible for any repairs or replacement costs.</p>
+        <p>Care of Equipment: The renter is responsible for the proper care and maintenance of the equipment during the rental period. Any damage caused by neglect or misuse of the equipment will be the responsibility of the renter.</p>
+        <p>Return of Equipment: The equipment must be returned to us on or before the agreed upon date. If the equipment is not returned on time, the renter will be charged additional rental fees for each day the equipment is late. If the equipment is not returned within 7 days of the rental period ending, the renter will be charged the full replacement cost of the equipment.</p>
+        <p>Termination: We reserve the right to terminate this agreement at any time if the renter fails to comply with any of the terms and conditions outlined in this agreement.</p>
+        <p>Liability: We are not responsible for any injury, loss or damage that may occur as a result of the use of the equipment.</p>
+        <p>Indemnification: The renter agrees to indemnify and hold us harmless from any claims, damages, or expenses arising from the use or misuse of the equipment during the rental period.</p>
+        <p>Governing Law: This agreement shall be governed by the laws of the jurisdiction in which the equipment is rented.</p>
+        <p>Entire Agreement: This agreement constitutes the entire agreement between the renter and us and supersedes all prior agreements and understandings, whether written or oral.</p>
+
       </Modal>
                
     </Container>

@@ -10,11 +10,10 @@ import getData from "../hooks/fetchData"
 import EquipmentsDetails from "../pages/EquipmentDetails"
 import OnRent from "../pages/OnRent"
 import Inputs from "../components/Layout/Input"
-import Checkout from "../pages/Checkout";
-// import  inputs from '../BecomeDriverInput'
-
-
-
+import Checkout from "../pages/Checkout"
+import inputs from "../components/Layout/BecomeDriverInput"
+import BecomeDriver from "../pages/BecomeDriver"
+import BlogDetails from "../pages/BlogDetails"
 const Routers = () => {
   const { data } = getData()
   return (
@@ -26,15 +25,16 @@ const Routers = () => {
       {/* <Route path="/onrent" element={<OnRent inputs={Inputs} />} /> */}
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/onrent" element={<OnRent inputs={Inputs}/>} />
+      <Route path="/onrent" element={<OnRent inputs={Inputs} />} />
+      <Route path="/become-driver" element={<BecomeDriver inputs={inputs} />} />
       <Route path="/equipments" element={<EquipmentListing />} />
-      
-      
+
       <Route
         path="/equipments/:idd"
         element={<EquipmentsDetails data={data} />}
       />
-      <Route path="/checkout/:idd" element={<Checkout data={data}/>} />
+      <Route path="/checkout/:idd" element={<Checkout data={data} />} />
+      <Route path="/blogs/:idd" element={<BlogDetails />} />
     </Routes>
   )
 }

@@ -7,6 +7,7 @@
   align-items: start;
   justify-content: start;
   gap: 1em;
+  text-align: justify;
 }
 
 .about__section-item p i {

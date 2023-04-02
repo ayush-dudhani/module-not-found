@@ -15,7 +15,7 @@ const ServicesList = () => {
 
 const ServiceItem = ({ item }) => (
   <Col lg="6" md="4" sm="6" className="mb-3">
-    <div className="service__item d-flex flex-column justify-content-center align-items-center">
+    <div className="service__item d-flex flex-column justify-content-center align-items-center w-100">
       <span className="mb-3 d-inline-block">
         <i class={item.icon} />
       </span>

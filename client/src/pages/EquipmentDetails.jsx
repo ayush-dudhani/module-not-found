@@ -142,7 +142,7 @@ const EquipmentsDetails = (props) => {
             MarginTop:'36px',
          
            }}>
-                <Link to={`/checkout/${idd}`}>Book now</Link>
+                <Link to={`/checkout/${idd}`} style={{textDecoration: "none", color: "white"}}>Book now</Link>
            
            </Button>}
           
