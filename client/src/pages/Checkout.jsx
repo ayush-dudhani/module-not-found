@@ -166,19 +166,19 @@ const Checkout=()=>{
            <Title style={{marginBottom:'0px'}}>Check Out Form</Title>
             <div style={{margin:'10px'}} className='Form-inputs'>
                <label >Full Name</label>
-              <Input onChange={handleInput}  id='name' placeholder='Full Name' ></Input>
+              <Input onChange={handleInput}  id='name' placeholder='Full Name'></Input>
 
               <label style={{paddingTop:'10px'}}>Address</label>
-             <Input  onChange={handleInput} id='add' placeholder='Address'></Input>
+             <Input  onChange={handleInput} id='add' placeholder='Address' type="text"></Input>
 
             
                <label  style={{paddingTop:'10px'}}>Pincode</label>
-               <Input  onChange={handleInput} id='pin' placeholder='Pincode'></Input>
+               <Input  onChange={handleInput} id='pin' placeholder='Pincode' inputmode="numeric" type="text"  pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$"></Input>
 
 
 
              <label style={{paddingTop:'10px'}}>No of days </label>
-            <Input   onChange={handleInput} id='days' placeholder='Number of days you want to rent the equipment'></Input>
+            <Input   onChange={handleInput} id='days' type="number" min={1} placeholder='Number of days you want to rent the equipment'></Input>
          
             
             <div style=
@@ -186,33 +186,31 @@ const Checkout=()=>{
                   paddingTop:'10px',
                   display:'flex',
                   paddingRight:'80px'
-                  
-                
-                  
+  
                }}>
                  {
                   formData.days>0  ?  
-                   <BButton
+                   <h1
                     style={{
                         width:'60%',
                     }}
                     >{`₹${price*formData.days}`}
                   
-                     </BButton>
+                     </h1>
                      
                    :  
                     
-                      <BButton
+                      <h1
                     style={{
                         width:'60%',
                     }}
                     >{`₹${price}`}
                   
-                     </BButton>
+                     </h1>
             
 
                  }
-            {formData.name && formData.add && formData.pin && formData.days  &&  <BButton  onClick={addDetails}>Check out</BButton>}
+            {formData.name && formData.add && formData.pin && formData.days  &&  <button className="primary" onClick={addDetails}>Check out</button>}
 
             </div>
       
@@ -253,7 +251,7 @@ const Checkout=()=>{
       />
 
       
-        <BButton onClick={()=>setBillChargeModal(false)}> Close</BButton>
+        <button className="primary" onClick={()=>setBillChargeModal(false)}> Close</button>
      
 
      
