@@ -135,7 +135,7 @@ const Header = () => {
                 <h1 style={logoStyleh1}>
                   <Link to="/home" className=" d-flex align-items-center gap-2">
                     <i class="ri-car-line"></i>
-                    <h1
+                    <h4
                       style={{
                         fontSize: "1.4rem",
                         fontWeight: "bold",
@@ -145,7 +145,7 @@ const Header = () => {
                     >
                       {" "}
                       Rent Farming Equipment <br /> Services
-                    </h1>
+                    </h4>
                     {/* <span style={logoSpan}>
                       Rent Farming Equipment <br /> Service
                     </span> */}

@@ -129,7 +129,8 @@ const App = () => {
   }
   return (
     <Container>
-      <Wrapper>
+      <div style={{display:"flex", alignItems:"center", justifyContent:"center", backgroundColor:"rgba(255, 255, 255, 0.5)", backdropFilter: "blur(10px)", padding: "2em", borderRadius: "10px"}}>
+      <div>
         <Title>Register</Title>
 
         {inputs.map((input) => (
@@ -140,10 +141,11 @@ const App = () => {
             onChange={handleChange}
           />
         ))}
-
-        <Button onClick={HandleSubmit}> Submit</Button>
+        
+        <Button onClick={HandleSubmit} style={{backgroundColor: "#000d6b"}}> Submit</Button>
         {error && <span>Wrong Email or Password !!</span>}
-      </Wrapper>
+        </div>
+      </div>
     </Container>
   )
 }

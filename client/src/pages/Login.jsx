@@ -119,7 +119,8 @@ const SignIn = () => {
 
   return (
     <Container>
-      <Wrapper>
+      <div style={{display:"flex", alignItems:"center", justifyContent:"center", backgroundColor:"rgba(255, 255, 255, 0.5)", backdropFilter: "blur(10px)", padding: "2em", borderRadius: "10px"}}>
+      <div>
         <Title>Login</Title>
 
         {inputs.map((input) => (
@@ -136,7 +137,8 @@ const SignIn = () => {
           Submit
         </Button>
         {/* {error &&  <span>Wrong Email or Password !!</span> }  */}
-      </Wrapper>
+        </div>
+      </div>
     </Container>
   )
 }
