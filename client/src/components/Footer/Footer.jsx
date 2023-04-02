@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
-import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import { Link } from "react-router-dom";
-import "../../styles/footer.css";
+import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap"
+import { Link } from "react-router-dom"
+import "../../styles/footer.css"
 
 const quickLinks = [
   {
@@ -28,11 +28,11 @@ const quickLinks = [
     path: "/contact",
     display: "Contact",
   },
-];
+]
 
 const Footer = () => {
-  const date = new Date();
-  const year = date.getFullYear();
+  const date = new Date()
+  const year = date.getFullYear()
   return (
     <footer className="footer">
       <Container>
@@ -40,20 +40,25 @@ const Footer = () => {
           <Col lg="4" md="4" sm="12">
             <div className="logo footer__logo">
               <h1>
-                <Link to="/home" className=" d-flex align-items-center gap-2" style={{textDecoration:"none"}} >
+                <Link
+                  to="/home"
+                  className=" d-flex align-items-center gap-2"
+                  style={{ textDecoration: "none" }}
+                >
                   <i class="ri-tools-line"></i>
                   <span>
-                    Rent Farming Eqipment <br /> Service
+                    Rent Farming Equipment <br /> Service
                   </span>
                 </Link>
               </h1>
             </div>
             <p className="footer__logo-content">
-               
-            We provide Farm Equipments Rentals to advance the productivity of your Farm.
-            Farmer Can also Earn by giving their instrument, machinary on rent through us. 
-            By providing farm equipment for rent we will help you prepare your land, protect your crop and harvest more effectively and efficiently .
-            Farmers are the power India and we empower farmers. Together we will advance agriculture.
+              We provide Farm Equipments Rentals to advance the productivity of
+              your Farm. Farmer Can also Earn by giving their instrument,
+              machinary on rent through us. By providing farm equipment for rent
+              we will help you prepare your land, protect your crop and harvest
+              more effectively and efficiently . Farmers are the power India and
+              we empower farmers. Together we will advance agriculture.
             </p>
           </Col>
 
@@ -84,7 +89,7 @@ const Footer = () => {
             <div className="mb-4">
               <h5 className="footer__link-title">Newsletter</h5>
               <p className="section__description">Subscribe our newsletter</p>
-              <div className="newsletter" style={{borderRadius: "10px"}}>
+              <div className="newsletter" style={{ borderRadius: "10px" }}>
                 <input type="email" placeholder="Email" />
                 <span>
                   <i class="ri-send-plane-line"></i>
@@ -103,7 +108,7 @@ const Footer = () => {
         </Row>
       </Container>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
